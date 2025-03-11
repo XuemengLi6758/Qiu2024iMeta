@@ -1,0 +1,35 @@
+ID	name
+M201T584	(2-Naphthalenyloxy)acetic acid
+M275T772	[8]-Shogaol
+M291T793	12-OPDA
+M155T38	"2,3-Butanediol"
+M449T640	2-Deoxyecdysone
+M374T764	3-Oxo-5beta-cholanate
+M145T100	4-Oxoglutaramate
+M204T444	5-Methoxyindoleacetate
+M241T434	5-Methyl-2'-deoxycytidine
+M301T373	5-Nitro-2-(3-phenylpropylamino)benzoic acid
+M239T568	6-Phosphonoglucono-D-lactone
+M254T495	"7,8-Dihydroneopterin"
+M281T67	9-Riburonosylhypoxanthine
+M271T725	Baicalein
+M189T539	Carglumic acid
+M152T300	Dopamine
+M180T508	Ecgonine methyl ester
+M445T532	Estrone glucuronide
+M314T387	Geranyl diphosphate
+M183T719	Harman
+M202T441	Indolepyruvate
+M266T506	Isoniazid alpha-ketoglutaric acid
+M351T689	Lipoxin A4
+M181T719_2	L-Sorbose
+M472T653	Maslinic acid
+M299T837	Nonadecanoic acid
+M267T730	Pentostatin
+M265T461	Phenylacetylglutamine
+M247T398	Pyridoxal phosphate
+M146T483	Quinolin-2-ol
+M285T440	Sakuranetin
+M241T408	Thiopental
+M193T377	trans-Ferulic acid
+M213T782	Tridecanoic acid

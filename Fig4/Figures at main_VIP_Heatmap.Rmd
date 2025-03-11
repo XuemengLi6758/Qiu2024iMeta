@@ -1,0 +1,78 @@
+---
+title: "Figure at mian_VIP_Heatmap"
+output: html_document
+date: "2025-03-10"
+---
+
+```{r setup, include=FALSE}
+library(devtools)
+library(usethis)
+library(grid)
+library(ComplexHeatmap)
+library(circlize)
+```
+
+
+```{r load-data}
+vip_data <- read.csv("Metabolism_VIPscore.csv",header=T,row.names=1)
+
+if (!is.data.frame(vip_data)) {
+  vip_data <- data.frame(vip_data)
+}
+
+```
+
+
+```{r plot-scatter}
+plot(x = vip_data$VIP_Score, 
+     y = 1:length(vip_data$Metabolite),
+     type = 'p',
+     pch = 20,   
+     col = "black", 
+     main = "Diff Metabolites by VIP score",
+     xlab = "VIP score", 
+     ylab = "Metabolites", 
+     ylim = c(0, length(vip_data$Metabolite) + 1))
+mtext(text = vip_data$Metabolite, side = 2, at = 1:length(vip_data$Metabolite), las = 1)
+
+```
+
+```{r load-data}
+data <- read.csv("metabolism_CE.csv",header=T,row.names=1)
+mydata <- apply(data, 1, scale)
+rownames(mydata) <- colnames(data)
+mydata <- t(mydata)
+mydata <- as.matrix(mydata)
+write.csv(mydata,file = "mydata.csv",row.names = T)
+
+data <- read.csv("mydata.csv",header=T,row.names=1)
+mydata <- as.matrix(data)
+
+head(mydata)
+```
+
+```{r plot-scatter}
+col_fun <- colorRamp2(c(1, 0, -1),c("#FA7676","#FFFFFF","#97D696"))
+Heatmap(mydata,
+        col = col_fun,
+        cluster_rows = TRUE,
+        cluster_columns = FALSE, 
+        rect_gp = gpar(col = "grey", lwd = 0),
+        column_dend_height = unit(0.5, "cm"), 
+        row_dend_width = unit(0.5, "cm"),
+        row_names_gp = gpar(fontsize = 8),
+        column_names_gp = gpar(fontsize = 4),column_names_rot = 45, column_names_centered = TRUE, 
+        show_heatmap_legend = FALSE)
+
+lgd <- Legend(col_fun = col_fun, 
+              at = c(-1, 0, 1),
+              title = "Z-score",
+              legend_height = unit(2, "cm"),
+              title_position = "topcenter",
+              title_gp = gpar(fontsize = 8),
+              labels_gp = gpar(fontsize = 8),
+              direction = "vertical",
+              grid_height = unit(4, "mm"))
+
+draw(lgd, x = unit(0.95, "npc"), y = unit(0.95, "npc"))
+```

@@ -1,0 +1,22 @@
+ID	name
+M179T587	(Z)-4-Hydroxy-6-dodecenoic acid lactone
+M181T553	1D-chiro-Inositol
+M150T442	2-(Methylamino)benzoic acid
+M405T683	"3alpha,7alpha-Dihydroxy-12-oxo-5beta-cholanate"
+M374T764	3-Oxo-5beta-cholanate
+M123T455	4-Methylcatechol
+M557T430	Atorvastatin
+M391T804_2	Chenodeoxycholic acid
+M416T774_1	Lithocholic acid glycine conjugate
+M289T92	Epiandrosterone
+M298T324	N7-Methylguanosine
+M171T79	Hydantoin-5-propionic acid
+M182T306_1	Beta-Tyrosine
+M515T732	Probucol
+M243T104	Pseudouridine
+M280T418	Thiazole
+M464T667	Ecdysone
+M134T472	oxindole
+M593T591	Mesobilirubinogen
+M204T698	Indolebutyric acid
+M166T153_1	7-Methylguanine

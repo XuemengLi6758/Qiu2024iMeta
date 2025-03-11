@@ -1,0 +1,22 @@
+ID	name
+M336T380	Dicumarol
+M146T483	Quinolin-2-ol
+M230T375_2	Xylulose 5-phosphate
+M232T489	Pyridoxine 5'-phosphate
+M165T200	"3,4-Dihydroxyphenylpropanoate"
+M166T145	L-Methionine S-oxide
+M365T592	Tetrahydrocortisone
+M472T653	Maslinic acid
+M179T92	D-Mannose
+M180T159	L-Tyrosine
+M287T95_1	"N1,N12-Diacetylspermine"
+M161T77	myo-Inositol
+M262T247	Mannitol 1-phosphate
+M269T482	Tolbutamide
+M283T702	Xanthosine
+M289T77	Argininosuccinic acid
+M297T397	5'-S-Methyl-5'-thioinosine
+M266T506	Isoniazid alpha-ketoglutaric acid
+M361T653	Cortisone
+M391T765	Allocholic acid
+M464T603_2	Glycocholic acid

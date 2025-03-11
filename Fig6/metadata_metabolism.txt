@@ -1,0 +1,31 @@
+ID	name
+M160T295	(1H-Indol-3-yl)-N-methylmethanamine
+M175T511	1H-Indole-3-acetamide
+M145T585	1H-Indole-3-carboxaldehyde
+M156T781	3-Indoleacetonitrile
+M170T399	3-Indoleacrylate
+M132T399	3-Methylindole
+M176T94	5-Hydroxyindoleacetaldehyde
+M191T769	5-Hydroxyindoleacetic acid
+M220T298	5-Hydroxy-L-tryptophan
+M204T444	5-Methoxyindoleacetate
+M249T473	6-Hydroxymelatonin
+M134T394	Hydroxyindole
+M224T348	Hydroxykynurenine
+M118T401	Indole
+M176T604	Indole-3-acetate
+M204T698	Indolebutyric acid
+M288T89_2	Indoleglycerol phosphate
+M206T552	Indolelactic acid
+M202T441	Indolepyruvate
+M188T348	Kynurenic acid
+M205T334	L-3-Hydroxykynurenine
+M209T337	L-Kynurenine
+M203T365	L-Tryptophan
+M190T732	Methyl (indol-3-yl)acetate
+M218T357	N-Acetylserotonin
+M124T144	Nicotinic acid
+M134T472	Oxindole
+M167T72	Quinolinic acid
+M177T315	Serotonin
+M204T321	Xanthurenic acid

@@ -1,0 +1,37 @@
+ID	name
+M104T97	Dimethylglycine
+M111T695	Pyrrole-2-carboxylic acid
+M119T101	Bovinocidin
+M127T315	Thymine
+M130T666	4-Guanidinobutanal
+M130T87	Pyrrolidonecarboxylic acid
+M131T93	(-)-Isopiperitenone
+M134T394	Hydroxyindole
+M136T675	Adenine
+M148T150	L-Methionine
+M149T571	3-Methylxanthine
+M152T289	2-Amino-4-nitrotoluene
+M153T274_3	p-Hydroxyphenylacetic acid
+M157T389	Uracil 5-carboxylate
+M161T76	N(6)-Methyllysine
+M169T343	Pyridoxamine
+M175T84	L-Arginine
+M176T186	N-Formyl-L-methionine
+M179T536	5-Deoxy-D-glucuronate
+M180T719	Caffeic acid
+M298T387	5'-Methylthioadenosine
+M181T91	L-Iditol
+M193T536	Sinapyl alcohol
+M195T754	3-Methyl-L-tyrosine
+M206T360	Pantothenol
+M228T748	Deoxyuridine
+M230T362	Propyphenazon
+M241T434	5-Methyl-2'-deoxycytidine
+M245T319	beta-Alanyl-L-arginine
+M252T74	Neopterin
+M253T580	Sotalol
+M267T277	Inosine
+M284T289	Guanosine
+M314T387	Geranyl diphosphate
+M414T767_2	"14alpha-Hydroxy-5beta-cholest-7-ene-3,6-dione"
+M539T759	Cupressuflavone

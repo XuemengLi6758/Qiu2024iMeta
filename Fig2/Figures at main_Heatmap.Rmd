@@ -1,0 +1,55 @@
+---
+title: "Figures at main"
+output: html_document
+date: "2025-03-10"
+---
+
+```{r setup, include=FALSE}
+library(devtools)
+library(usethis)
+library(grid)
+library(ComplexHeatmap)
+library(circlize)
+```
+
+```{r load-data}
+data <- read.csv("metabolism_cen.csv",header=T,row.names=1)
+mydata <- apply(data, 1, scale)
+rownames(mydata) <- colnames(data)
+mydata <- t(mydata)
+mydata <- as.matrix(mydata)
+write.csv(mydata,file = "mydata.csv",row.names = T)
+
+data <- read.csv("mydata.csv",header=T,row.names=1)
+mydata <- as.matrix(data)
+
+head(mydata)
+```
+
+```{r scatter-plot}
+Heatmap(mydata)
+col_fun <- colorRamp2(c(2, 0, -2),c("#CD0000","#FFFFFF","#00008B"))
+Heatmap(mydata,
+        col = col_fun,
+        cluster_rows = TRUE,
+        cluster_columns = FALSE, 
+        rect_gp = gpar(col = "grey", lwd = 0),
+        column_dend_height = unit(0.5, "cm"), 
+        row_dend_width = unit(0.5, "cm"),
+        row_names_gp = gpar(fontsize = 8),
+        column_names_gp = gpar(fontsize = 4),column_names_rot = 45, column_names_centered = TRUE, 
+        show_heatmap_legend = FALSE)
+
+lgd <- Legend(col_fun = col_fun, 
+              at = c(-2, 0, 2),
+              title = "Z-score",
+              legend_height = unit(2, "cm"),
+              title_position = "topcenter",
+              title_gp = gpar(fontsize = 8),
+              labels_gp = gpar(fontsize = 8),
+              direction = "vertical",
+              grid_height = unit(4, "mm"))
+
+draw(lgd, x = unit(0.95, "npc"), y = unit(0.95, "npc"))
+```
+

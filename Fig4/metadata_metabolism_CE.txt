@@ -1,0 +1,31 @@
+ID	name
+M107T469	p-Cresol
+M150T442	2-(Methylamino)benzoic acid
+M146T483	Quinolin-2-ol
+M230T375_2	Xylulose 5-phosphate
+M232T489	Pyridoxine 5'-phosphate
+M226T505	L-Glutamic acid 5-phosphate
+M230T442	D-Ribulose 5-phosphate
+M472T653	Maslinic acid
+M416T774_1	Lithocholic acid glycine conjugate
+M289T92	Epiandrosterone
+M178T102	(R)C(S)S-Alliin
+M180T508	Ecgonine methyl ester
+M192T600	Phenylacetylglycine
+M265T461	Phenylacetylglutamine
+M287T95_1	"N1,N12-Diacetylspermine"
+M182T306_1	Beta-Tyrosine
+M266T461	gamma-Glutamyltyramine
+M464T667	Ecdysone
+M247T431	Lenticin
+M232T370	Butyryl-L-carnitine
+M152T490	Pyridoxine
+M134T472	oxindole
+M197T524	DNOC
+M593T591	Mesobilirubinogen
+M330T671	Carnosol
+M266T506	Isoniazid alpha-ketoglutaric acid
+M120T534	4-Fluoro-L-threonine
+M314T774	"9,10-DHOME"
+M204T698	Indolebutyric acid
+M353T767	Yohimbine

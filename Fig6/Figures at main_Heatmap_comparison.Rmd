@@ -1,0 +1,108 @@
+---
+title: "Figures at main_Heatmap_comparison"
+output: html_document
+date: "2025-03-10"
+---
+
+```{r setup, include=FALSE}
+library(devtools)
+library(usethis)
+library(grid)
+library(ComplexHeatmap)
+library(circlize)
+```
+
+```{r load-data}
+data <- read.csv("Gut_KEGG_top20_comparison.csv",header=T,row.names=1)
+mydata <- as.matrix(data)
+head(mydata)
+```
+
+```{r plot-scatter}
+Heatmap(mydata)
+col_fun <- colorRamp2(c(0.5, 0, -0.5),c("#FF0000","#FFFFFF","#0000FF"))
+Heatmap(mydata, 
+        col = col_fun,
+        rect_gp = gpar(col = "white", lwd = 1),
+        cluster_rows = FALSE,
+        cluster_columns = TRUE, 
+        column_names_gp= gpar(fontsize = 8),column_names_rot = 0,column_names_centered = TRUE,
+        cell_fun = function(j, i, x, y, width, height, fill) {
+          grid.text(sprintf("%.2f", mydata[i, j]), x, y, gp = gpar(fontsize = 5))})
+```
+
+```{r load-data}
+p_data <- read.csv("comparison_fdr.csv",header=T,row.names=1)
+p_data <- as.matrix(p_data)
+```
+
+```{r plot-scatter}
+Heatmap(mydata, 
+        # 设置颜色：
+        col = col_fun,
+        # 调整热图格子的边框颜色和粗细：
+        rect_gp = gpar(col = "white", lwd = 1),
+        # 调整聚类树的高度：
+        #column_dend_height = unit(2, "cm"), 
+        #row_dend_width = unit(2, "cm"),
+        cluster_rows = FALSE,
+        cluster_columns = TRUE, 
+        # 调整字体大小：
+        row_names_gp = gpar(fontsize = 12),
+        column_names_gp = gpar(fontsize = 12),column_names_rot = 30,
+        # 设置单元格中添加文字：
+        cell_fun = function(j, i, x, y, width, height, fill) {
+          if (p_data[i,j] < 0.001) {
+            grid.text(sprintf("***", data[i, j]), x, y, gp = gpar(fontsize = 8))
+          } else if (p_data[i,j]<0.01) {
+            grid.text(sprintf("**", data[i, j]), x, y, gp = gpar(fontsize = 8))
+          } else if (p_data[i,j]<0.05) {
+            grid.text(sprintf("*", data[i, j]), x, y, gp = gpar(fontsize = 8))
+          } else {
+            grid.text(sprintf("", data[i, j]), x, y, gp = gpar(fontsize = 8))
+          }
+        })
+
+
+Heatmap(data, 
+        col = col_fun,
+        rect_gp = gpar(col = "white", lwd = 1),
+        cluster_rows = FALSE,
+        cluster_columns = FALSE, 
+        row_names_gp = gpar(fontsize = 12),
+        column_names_gp = gpar(fontsize = 12),column_names_rot = 30,
+        cell_fun = function(j, i, x, y, width, height, fill) {
+          if (p_data[i,j] < 0.001) {
+            grid.text(sprintf("***", data[i, j]), x, y, gp = gpar(fontsize = 16))
+          } else if (p_data[i,j]<0.01) {
+            grid.text(sprintf("**", data[i, j]), x, y, gp = gpar(fontsize = 16))
+          } else if (p_data[i,j]<0.05) {
+            grid.text(sprintf("*", data[i, j]), x, y, gp = gpar(fontsize = 16))
+          } else {
+            grid.text(sprintf("", data[i, j]), x, y, gp = gpar(fontsize = 16))
+          }
+        },show_heatmap_legend = FALSE,
+        heatmap_legend_param = list(col_fun = col_fun, 
+                                    at = c(0.5,0,-0.5),
+                                    title = "log2FC",
+                                    legend_height = unit(2, "cm"),
+                                    title_position = "topcenter",
+                                    title_gp = gpar(fontsize = 5),
+                                    labels_gp = gpar(fontsize = 5),
+                                    direction = "horizontal",
+                                    grid_height = unit(4, "mm")))
+
+lgd <- Legend(col_fun = col_fun, 
+              at = c(-0.5, 0, 0.5),
+              title = "log2FC",
+              legend_height = unit(2, "cm"),
+              title_position = "topcenter",
+              title_gp = gpar(fontsize = 10),
+              labels_gp = gpar(fontsize = 8),
+              direction = "vertical",  
+              grid_height = unit(4, "mm"))
+
+
+draw(lgd, x = unit(0.98, "npc"), y = unit(0.90, "npc"))
+```
+
